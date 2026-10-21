@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Auxano Institute | ADEYANJU ADEDIRE JAMES</title>
+
+    <style>
+        /* =========================
+           RESET & GLOBAL STYLES
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #6c63ff;
+            --secondary: #00c6ff;
+            --accent: #ff4ecd;
+            --dark: #0f172a;
+            --dark2: #1e293b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --text: #334155;
+            --muted: #64748b;
+            --card: rgba(255,255,255,0.9);
+            --shadow: 0 15px 40px rgba(15, 23, 42, 0.12);
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--light);
+            transition: 0.4s ease;
+        }
+
+        body.dark {
+            --light: #020617;
+            --white: #0f172a;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --card: rgba(15,23,42,0.9);
+            --shadow: 0 15px 40px rgba(0,0,0,0.35);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .section-title p {
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           HEADER / NAVIGATION
+        ========================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        body.dark header {
+            background: rgba(2,6,23,0.85);
+        }
+
+        nav {
+            height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-btn,
+        .menu-btn {
+            border: none;
+            background: var(--primary);
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .menu-btn {
+            display: none;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(108,99,255,0.18), transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(0,198,255,0.18), transparent 30%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 50px;
+            padding-top: 70px;
+        }
+
+        .hero-text small {
+            color: var(--primary);
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.7rem, 6vw, 5rem);
+            line-height: 1.1;
+            margin: 15px 0;
+            color: var(--text);
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(
+                90deg,
+                var(--primary),
+                var(--secondary),
+                var(--accent)
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            max-width: 650px;
+            color: var(--muted);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                var(--secondary)
+            );
+            box-shadow: 0 10px 25px rgba(108,99,255,0.3);
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(108,99,255,0.4);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-circle {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            padding: 8px;
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                var(--secondary),
+                var(--accent)
+            );
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .profile-circle div {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--dark2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 6rem;
+            font-weight: bold;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat {
+            background: var(--card);
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .stat h3 {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .stat p {
+            color: var(--muted);
+            margin: 0;
+        }
+
+
+        /* =========================
+           LEARNING CARDS
+        ========================== */
+
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
+        }
+
+        .learning-card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: 0.4s;
+            border: 1px solid rgba(108,99,255,0.08);
+        }
+
+        .learning-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .learning-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .learning-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .learning-card p {
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           STEPS
+        ========================== */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 20px;
+        }
+
+        .step {
+            position: relative;
+            text-align: center;
+            padding: 25px 15px;
+            background: var(--card);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                var(--secondary)
+            );
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 40px;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: var(--card);
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--primary);
+        }
+
+        .contact-item span {
+            color: var(--muted);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            outline: none;
+            background: rgba(148,163,184,0.12);
+            color: var(--text);
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--primary);
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-status {
+            margin-top: 15px;
+            font-weight: 600;
+            color: var(--primary);
+            display: none;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #020617;
+            color: white;
+            text-align: center;
+            padding: 35px 15px;
+        }
+
+        footer p {
+            margin: 8px 0;
+            color: #cbd5e1;
+        }
+
+        footer strong {
+            color: #8b5cf6;
+        }
+
+
+        /* =========================
+           SCROLL TOP BUTTON
+        ========================== */
+
+        #topBtn {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                var(--secondary)
+            );
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+            z-index: 999;
+        }
+
+
+        /* =========================
+           REVEAL ANIMATION
+        ========================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .hero-content,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .learning-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .steps {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .nav-links {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background: var(--white);
+                padding: 25px;
+                text-align: center;
+                display: none;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .learning-grid,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-circle {
+                width: 250px;
+                height: 250px;
+            }
+
+            .profile-circle div {
+                font-size: 4rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+        <div class="container">
+            <nav>
+
+                <a href="#home" class="logo">
+                    Auxano<span>Institute</span>
+                </a>
+
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#learning">Learning</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+
+                    <button class="theme-btn" id="themeBtn">
+                        ☀️
+                    </button>
+
+                    <button class="menu-btn" id="menuBtn">
+                        ☰
+                    </button>
+
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="container hero-content">
+
+            <div class="hero-text reveal">
+
+                <small>Hello, My Name is</small>
+
+                <h1>
+                    ADEYANJU<br>
+                    <span>ADEDIRE JAMES</span>
+                </h1>
+
+                <h3>
+                    Full Stack Web & Mobile App Developer
+                </h3>
+
+                <p>
+                    I am a student at Auxano Institute of Technology,
+                    passionate about learning full stack development
+                    and building innovative digital solutions.
+                </p>
+
+                <a href="#contact" class="btn">
+                    Get In Touch
+                </a>
+
+            </div>
+
+            <div class="hero-image reveal">
+
+                <div class="profile-circle">
+                    <div>
+                        AJ
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT SECTION
+    ========================== -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-title reveal">
+                <h2>About <span>Me</span></h2>
+                <p>My journey into technology and development</p>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-text reveal">
+
+                    <h3>Building My Future Through Technology</h3>
+
+                    <p>
+                        I am a dedicated student at Auxano Institute of
+                        Technology, learning the ins and outs of full
+                        stack web and mobile app development.
+                    </p>
+
+                    <p>
+                        This portfolio website is the first project I
+                        built and published entirely from my smartphone.
+                    </p>
+
+                    <p>
+                        My goal is to become a skilled developer who can
+                        create impactful digital solutions that solve
+                        real-world problems. I'm committed to continuous
+                        learning and improvement.
+                    </p>
+
+                </div>
+
+                <div class="stats reveal">
+
+                    <div class="stat">
+                        <h3 class="counter" data-target="5">0</h3>
+                        <p>Projects+</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3 class="counter" data-target="10">0</h3>
+                        <p>Skills+</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3 class="counter" data-target="1">0</h3>
+                        <p>Year Experience+</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LEARNING SECTION
+    ========================== -->
+
+    <section id="learning">
+
+        <div class="container">
+
+            <div class="section-title reveal">
+                <h2>What I'm <span>Learning</span></h2>
+                <p>Technologies and skills I'm developing</p>
+            </div>
+
+            <div class="learning-grid">
+
+                <div class="learning-card reveal">
+                    <div class="learning-icon">📚</div>
+                    <h3>HTML Basics</h3>
+                    <p>
+                        Building semantic and accessible web pages
+                        with proper HTML structure.
+                    </p>
+                </div>
+
+                <div class="learning-card reveal">
+                    <div class="learning-icon">🎨</div>
+                    <h3>CSS Styling</h3>
+                    <p>
+                        Creating responsive and beautiful designs
+                        with modern CSS techniques.
+                    </p>
+                </div>
+
+                <div class="learning-card reveal">
+                    <div class="learning-icon">⚙️</div>
+                    <h3>JavaScript</h3>
+                    <p>
+                        Writing interactive and dynamic functionality
+                        to bring web pages to life.
+                    </p>
+                </div>
+
+                <div class="learning-card reveal">
+                    <div class="learning-icon">📱</div>
+                    <h3>Mobile Development</h3>
+                    <p>
+                        Learning to build cross-platform mobile
+                        applications alongside the web.
+                    </p>
+                </div>
+
+                <div class="learning-card reveal">
+                    <div class="learning-icon">🗄️</div>
+                    <h3>Backend & Databases</h3>
+                    <p>
+                        Understanding servers, APIs, and how to
+                        store and manage application data.
+                    </p>
+                </div>
+
+                <div class="learning-card reveal">
+                    <div class="learning-icon">🚀</div>
+                    <h3>Version Control</h3>
+                    <p>
+                        Using Git and GitHub to track changes and
+                        collaborate on projects.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         STEPS / PROCESS SECTION
+    ========================== -->
+
+    <section id="process">
+
+        <div class="container">
+
+            <div class="section-title reveal">
+                <h2>My Learning <span>Path</span></h2>
+                <p>How I'm approaching my journey step by step</p>
+            </div>
+
+            <div class="steps">
+
+                <div class="step reveal">
+                    <div class="step-number">1</div>
+                    <h3>Enroll</h3>
+                    <p>Joined Auxano Institute of Technology.</p>
+                </div>
+
+                <div class="step reveal">
+                    <div class="step-number">2</div>
+                    <h3>Learn Fundamentals</h3>
+                    <p>Studied HTML, CSS, and JavaScript basics.</p>
+                </div>
+
+                <div class="step reveal">
+                    <div class="step-number">3</div>
+                    <h3>Build Projects</h3>
+                    <p>Applied skills to real, hands-on projects.</p>
+                </div>
+
+                <div class="step reveal">
+                    <div class="step-number">4</div>
+                    <h3>Go Full Stack</h3>
+                    <p>Expanding into backend and mobile development.</p>
+                </div>
+
+                <div class="step reveal">
+                    <div class="step-number">5</div>
+                    <h3>Launch Career</h3>
+                    <p>Working toward becoming a professional developer.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT SECTION
+    ========================== -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="section-title reveal">
+                <h2>Get In <span>Touch</span></h2>
+                <p>Feel free to reach out for opportunities or collaboration</p>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-info reveal">
+
+                    <h3>Contact Information</h3>
+
+                    <div class="contact-item">
+                        <strong>Email</strong>
+                        <span>adebunmi2013.aa@gmail.com</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Phone</strong>
+                        <span>07066450490 / 08054095056</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Location</strong>
+                        <span>Nigeria</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Institute</strong>
+                        <span>Auxano Institute of Technology</span>
+                    </div>
+
+                </div>
+
+                <form class="contact-form reveal" id="contactForm">
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn submit-btn">
+                        Send Message
+                    </button>
+
+                    <p class="form-status" id="formStatus"></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+        <p><strong>Auxano Institute</strong> Portfolio</p>
+        <p>Built entirely from a smartphone by ADEYANJU ADEDIRE JAMES</p>
+        <p>&copy; <span id="year"></span> All rights reserved.</p>
+    </footer>
+
+
+    <!-- =========================
+         SCROLL TOP BUTTON
+    ========================== -->
+
+    <button id="topBtn">↑</button>
+
+
+    <script>
+        /* =========================
+           MOBILE NAV TOGGLE
+        ========================== */
+
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+
+        /* =========================
+           DARK / LIGHT MODE
+        ========================== */
+
+        const themeBtn = document.getElementById('themeBtn');
+        const body = document.body;
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                body.classList.add('dark');
+                themeBtn.textContent = '🌙';
+            } else {
+                body.classList.remove('dark');
+                themeBtn.textContent = '☀️';
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        applyTheme(savedTheme);
+
+        themeBtn.addEventListener('click', () => {
+            const isDark = body.classList.contains('dark');
+            const newTheme = isDark ? 'light' : 'dark';
+            applyTheme(newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+
+        /* =========================
+           SCROLL REVEAL ANIMATION
+        ========================== */
+
+        const revealEls = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealEls.forEach(el => revealObserver.observe(el));
+
+
+        /* =========================
+           ANIMATED COUNTERS
+        ========================== */
+
+        const counters = document.querySelectorAll('.counter');
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-target'), 10);
+                    let count = 0;
+                    const duration = 1200;
+                    const stepTime = Math.max(Math.floor(duration / target), 20);
+
+                    const timer = setInterval(() => {
+                        count++;
+                        el.textContent = count;
+                        if (count >= target) {
+                            el.textContent = target;
+                            clearInterval(timer);
+                        }
+                    }, stepTime);
+
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => counterObserver.observe(counter));
+
+
+        /* =========================
+           SCROLL TO TOP BUTTON
+        ========================== */
+
+        const topBtn = document.getElementById('topBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                topBtn.style.display = 'block';
+            } else {
+                topBtn.style.display = 'none';
+            }
+        });
+
+        topBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+
+        /* =========================
+           CONTACT FORM (DEMO)
+        ========================== */
+
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formStatus.style.display = 'block';
+            formStatus.textContent = 'Thank you! Your message has been noted.';
+            contactForm.reset();
+
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 4000);
+        });
+
+
+        /* =========================
+           FOOTER YEAR
+        ========================== */
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

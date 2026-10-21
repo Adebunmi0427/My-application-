@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#073b7a">
+  <meta name="description" content="HIGHERIMMACULATE EDUCATION CONSULT — learning support, CBT practice and admission guidance.">
+  <title>HIGHERIMMACULATE | Learning • CBT • Admission</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="HigherImmaculate home">
+        <span class="brand-mark">H</span><span><strong>HIGHERIMMACULATE</strong><small>EDUCATION CONSULT</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav id="mainNav" class="main-nav">
+        <a href="#home">Home</a><a href="#curriculum">Curriculum</a><a href="#cbt">CBT Practice</a>
+        <a href="#admission">Admission</a><a href="#resources">Resources</a><a href="#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☼</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="live-dot"></span> NIGERIAN SECONDARY EDUCATION LEARNING PORTAL</span>
+          <h1>Learn. Practice.<br><span>Prepare for success.</span></h1>
+          <p>A digital academic companion for secondary school students, parents and prospective candidates. Explore curriculum areas, practise CBT questions, get examination information and request admission guidance.</p>
+          <div class="hero-actions">
+            <a class="btn btn-accent" href="#cbt">✍ Start CBT Practice</a>
+            <a class="btn btn-light-outline" href="#curriculum">▤ Explore Curriculum</a>
+          </div>
+          <div class="trust-line"><span>✓ Student-focused</span><span>✓ Mobile-friendly</span><span>✓ Learning support</span></div>
+        </div>
+        <div class="hero-card">
+          <div class="card-top"><span class="mini-label">STUDENT LEARNING CENTRE</span><span class="status-pill">● ONLINE</span></div>
+          <div class="book-illustration" aria-hidden="true"><div class="book book-back"></div><div class="book book-front"><span>H</span></div><div class="spark spark-a">✦</div><div class="spark spark-b">✧</div></div>
+          <h2>Your digital academic companion</h2>
+          <p>Learning support, subject practice and educational guidance in one place.</p>
+          <div class="stat-grid"><div><strong>JSS 1–3</strong><span>Junior Secondary</span></div><div><strong>SS 1–3</strong><span>Senior Secondary</span></div><div><strong>CBT Tests</strong><span>Timed practice</span></div><div><strong>24/7</strong><span>Learning access</span></div></div>
+        </div>
+      </div>
+      <div class="hero-bottom"><div class="container bottom-inner"><span>📚 Learn at your pace</span><span>📝 Practise with purpose</span><span>🎓 Plan your next step</span></div></div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">WHAT WE PROVIDE</span><h2>Everything students need to <span>move forward</span></h2><p>Access useful academic information and educational support through a simple learning environment.</p></div>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-icon blue">📚</div><h3>Curriculum</h3><p>Browse JSS and SS subject areas and learning information.</p><a href="#curriculum">Explore subjects <span>→</span></a></article>
+          <article class="feature-card"><div class="feature-icon orange">📝</div><h3>CBT Practice</h3><p>Test your knowledge with interactive multiple-choice questions.</p><a href="#cbt">Start practising <span>→</span></a></article>
+          <article class="feature-card"><div class="feature-icon green">🎓</div><h3>Admission Support</h3><p>Get information and submit an admission enquiry for assistance.</p><a href="#admission">Get guidance <span>→</span></a></article>
+          <article class="feature-card"><div class="feature-icon purple">💬</div><h3>Contact Consultant</h3><p>Send questions and enquiries directly through WhatsApp.</p><a href="#contact">Talk to us <span>→</span></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="curriculum">
+      <div class="container">
+        <div class="section-heading align-left"><span class="eyebrow">ACADEMIC PROGRAMME</span><h2>Secondary school <span>curriculum</span></h2><p>Browse subjects by level. Use the search box to find a subject quickly.</p></div>
+        <div class="filter-bar"><div class="filter-buttons" role="group" aria-label="Filter by level"><button class="filter-btn active" data-level="all">All levels</button><button class="filter-btn" data-level="JSS">JSS 1–3</button><button class="filter-btn" data-level="SS">SS 1–3</button></div><label class="search-box">⌕ <input id="subjectSearch" type="search" placeholder="Search subjects e.g. Mathematics, Biology…" aria-label="Search subjects"></label></div>
+        <div class="subject-grid" id="subjectGrid"></div>
+        <p class="small-note">Subject offerings and compulsory combinations depend on the applicable curriculum and school programme. Verify current requirements before use.</p>
+      </div>
+    </section>
+
+    <section class="section cbt-section" id="cbt">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">COMPUTER-BASED TEST</span><h2>Interactive CBT <span>practice</span></h2><p>Choose your level and subject, then practise sample questions. Your score is calculated in this browser.</p></div>
+        <div class="cbt-layout">
+          <div class="panel cbt-settings">
+            <div class="panel-heading"><span class="panel-icon">⚙</span><div><h3>CBT Settings</h3><p>Choose a practice category to begin.</p></div></div>
+            <form id="cbtForm">
+              <label>Level<select id="cbtLevel"><option value="JSS">Junior Secondary (JSS)</option><option value="SS">Senior Secondary (SS)</option></select></label>
+              <label>Subject<select id="cbtSubject"><option value="English">English Language</option><option value="Mathematics">Mathematics</option><option value="Biology">Biology</option><option value="Basic Science">Basic Science</option></select></label>
+              <label>Number of questions<select id="questionCount"><option value="5">5 questions</option><option value="10">10 questions</option></select></label>
+              <button class="btn btn-primary full-width" type="submit">🚀 Start Test</button>
+            </form>
+            <div class="notice">ℹ️ These are sample practice items. Add school-approved questions before production use.</div>
+            <button class="text-button" id="historyToggle">View my CBT history →</button>
+            <div id="historyBox" class="history-box hidden"></div>
+          </div>
+          <div class="panel test-panel" id="testPanel">
+            <div class="test-welcome" id="testWelcome"><div class="welcome-icon">✍️</div><span class="eyebrow">READY WHEN YOU ARE</span><h3>Your next step starts here.</h3><p>Select your level, subject and number of questions, then click <b>Start Test</b>.</p><div class="timer-preview">◷ &nbsp; 05:00 practice timer</div></div>
+            <div id="questionArea" class="hidden">
+              <div class="test-topline"><span id="questionProgress">QUESTION 1 OF 5</span><span class="timer" id="timer">05:00</span></div>
+              <div class="progress-track"><div id="progressFill"></div></div>
+              <h3 id="questionText"></h3><div id="answerOptions" class="answer-options"></div>
+              <div class="test-actions"><button class="btn btn-secondary" id="quitTest" type="button">Quit test</button><button class="btn btn-primary" id="nextQuestion" type="button" disabled>Next question →</button></div>
+            </div>
+            <div id="resultArea" class="result-area hidden"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section admission-section" id="admission">
+      <div class="container admission-grid">
+        <div class="admission-copy"><span class="eyebrow">JOIN OUR EDUCATIONAL SUPPORT</span><h2>Take the next step in your <span>education journey.</span></h2><p>Prospective students and parents can request admission information, course guidance, examination support, Post-UTME guidance and help with online educational applications.</p>
+          <ul class="check-list"><li>Admission enquiry support</li><li>Class and level guidance</li><li>Institution and course information</li><li>Academic programme information</li><li>Parent and student enquiries</li><li>Examination registration assistance</li></ul>
+          <div class="support-banner"><span>💡</span><div><strong>Not sure where to start?</strong><p>Send us an enquiry and tell us what support you need.</p></div></div>
+        </div>
+        <div class="panel enquiry-panel"><div class="panel-heading"><span class="panel-icon orange-bg">🎓</span><div><h3>Admission Enquiry</h3><p>Complete the form to continue through WhatsApp.</p></div></div>
+          <form id="admissionForm" class="form-grid">
+            <label class="span-2">Full name<input name="name" required placeholder="Student or parent name"></label>
+            <label>Phone number<input name="phone" required type="tel" placeholder="080…"></label>
+            <label>Email address<input name="email" type="email" placeholder="example@email.com"></label>
+            <label class="span-2">I need help with<select name="service" required><option value="">Select a service</option><option>Admission guidance</option><option>JAMB / Post-UTME</option><option>WAEC / NECO / NABTEB</option><option>Online application</option><option>Course and institution selection</option><option>CBT practice</option><option>Other educational support</option></select></label>
+            <label class="span-2">Message<textarea name="message" rows="4" placeholder="Tell us briefly how we can help…"></textarea></label>
+            <button class="btn btn-accent full-width span-2" type="submit">📤 Send Enquiry on WhatsApp</button>
+          </form><p class="form-footnote">Your message opens in WhatsApp for you to review and send.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="resources">
+      <div class="container"><div class="section-heading"><span class="eyebrow">LEARNING RESOURCES</span><h2>Student resource <span>centre</span></h2><p>Build consistent study habits with revision tools and educational information.</p></div>
+        <div class="resource-grid">
+          <article class="resource-card"><div class="resource-emoji">📖</div><div><h3>Study Notes</h3><p>Subject-by-subject learning materials can be organised here.</p><a href="#contact">Request materials →</a></div></article>
+          <article class="resource-card"><div class="resource-emoji">🧠</div><div><h3>Practice Questions</h3><p>Strengthen understanding with objective question practice.</p><a href="#cbt">Practise now →</a></div></article>
+          <article class="resource-card"><div class="resource-emoji">🎓</div><div><h3>Exam Preparation</h3><p>Prepare systematically with class and subject revision resources.</p><a href="#admission">Get support →</a></div></article>
+          <article class="resource-card"><div class="resource-emoji">📋</div><div><h3>Education Updates</h3><p>Ask us about examination dates, deadlines and academic information.</p><a href="#contact">Make an enquiry →</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq"><div class="container faq-layout">
+      <div class="section-heading align-left"><span class="eyebrow">HELP CENTRE</span><h2>Frequently asked <span>questions</span></h2><p>Quick answers for students and parents using the portal.</p><a class="btn btn-primary" href="#contact">Ask another question</a></div>
+      <div class="faq-list">
+        <details><summary>Is this an official government examination portal?</summary><p>No. This is an educational information, learning and consultancy platform. It is not an official WAEC, NECO, JAMB, NERDC or Federal Ministry examination portal.</p></details>
+        <details><summary>Can students practise CBT questions?</summary><p>Yes. The frontend includes a sample interactive CBT engine. More school-approved questions can be added to its question bank.</p></details>
+        <details><summary>Can I request admission assistance?</summary><p>Yes. Complete the admission enquiry form and the request will be prepared for WhatsApp.</p></details>
+        <details><summary>Can this website complete examination registration?</summary><p>The frontend can collect an enquiry and connect you with the consultant. Actual registration should be completed through the relevant official examination body or approved channel.</p></details>
+        <details><summary>Does the website store student information?</summary><p>CBT history is stored locally in your browser. This frontend does not include a secure server or database for student accounts.</p></details>
+      </div>
+    </div></section>
+
+    <section class="contact-section" id="contact"><div class="container contact-grid">
+      <div><span class="eyebrow light-eyebrow">GET IN TOUCH</span><h2>Let’s work towards your <span>next success.</span></h2><p>For examination registration assistance, admission guidance, CBT support and course selection, contact HIGHERIMMACULATE EDUCATION CONSULT.</p>
+        <div class="contact-items">
+          <div class="contact-item"><span>📍</span><div><small>OFFICE ADDRESS</small><p>4 Alhaji Ganiyu Olugbade Street, Lambo Lasunwon Area, Opposite LASUSTECH First Gate, Ikorodu, Lagos, Nigeria.</p></div></div>
+          <div class="contact-item"><span>📞</span><div><small>PHONE / WHATSAPP</small><p>+234 706 645 0490</p></div></div>
+          <div class="contact-item"><span>✉️</span><div><small>EMAIL</small><p>adebunmi2013.aa@gmail.com</p></div></div>
+          <div class="contact-item"><span>🕘</span><div><small>OFFICE HOURS</small><p>Monday – Saturday: 8:00 AM – 6:00 PM</p></div></div>
+        </div><a class="btn btn-accent" href="https://wa.me/2347066450490" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+      </div>
+      <div class="contact-form-card"><h3>Send us a message</h3><p>Your message will open in WhatsApp with the details you provide.</p>
+        <form id="contactForm"><label>Your name<input name="name" required placeholder="Full name"></label><label>Phone number<input name="phone" type="tel" placeholder="080…"></label><label>Email address<input name="email" type="email" placeholder="your@email.com"></label><label>Subject<input name="subject" required placeholder="What do you want to ask?"></label><label>Message<textarea name="message" required rows="4" placeholder="Type your message…"></textarea></label><button class="btn btn-accent full-width" type="submit">📤 Send Message</button></form>
+      </div>
+    </div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-top"><a class="brand footer-brand" href="#home"><span class="brand-mark">H</span><span><strong>HIGHERIMMACULATE</strong><small>EDUCATION CONSULT</small></span></a><p>A digital learning, information, CBT and educational-support platform for students, parents and prospective candidates.</p><div class="footer-links"><a href="#curriculum">Curriculum</a><a href="#cbt">CBT Practice</a><a href="#admission">Admission</a><a href="#contact">Contact</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> HIGHERIMMACULATE EDUCATION CONSULT. All rights reserved.</span><a href="#home">Back to top ↑</a></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
